@@ -1,0 +1,14 @@
+{
+  "name": "student-backend",
+  "description": "Backend service for managing student data",
+  "author": "<your name>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "pg": "8.16.3"
+  }
+}

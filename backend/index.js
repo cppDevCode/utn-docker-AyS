@@ -22,6 +22,16 @@ app.get("/api/students", async (req, res) => {
     res.status(500).send("DB error");
   }
 });
+app.post('/api/students', (req, res) => {
+  const datosRecibidos = req.body.name;
+  try {
+    console.log(`Datos recibidos = ${datosRecibidos}`);
+    db.query(`INSERT INTO students (name) VALUES ('${datosRecibidos}')`);
+  } catch (err) {
+    console.err(err);
+    res.status(500).send("DB error");
+  }
+})
 
 // Start the server
 app.listen(port, () => console.log(`App running on port ${port}`));

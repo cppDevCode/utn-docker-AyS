@@ -2,6 +2,12 @@
 
 Proyecto final de "Arquitectura y Sistemas Operativos"
 
+
+# Integrantes 
+* Baldres, Alejandro Lucas
+* Torresi, Matias
+
+
 ## Servicios
 
 - Node.js (Express)

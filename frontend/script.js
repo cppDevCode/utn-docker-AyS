@@ -17,3 +17,22 @@ document.getElementById("saludoButton").addEventListener("click", async () => {
   const textoH1 = document.querySelector("#saludoTxt");
   textoH1.innerHTML = saludo.message;
 });
+
+document.getElementById("insertButton").addEventListener("click", async () => {
+  let nombre = prompt("Ingrese el nombre del Estudiante:", "");
+  let jsonNombre = {
+    name: nombre
+  };
+
+  fetch (`/api/students`, {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(jsonNombre)
+  })
+  .then(res => res.json())
+  .then(data => {
+  console.log('Respuesta del servidor:', data);
+  });
+});

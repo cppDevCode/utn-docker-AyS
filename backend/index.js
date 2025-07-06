@@ -22,13 +22,19 @@ app.get("/api/students", async (req, res) => {
     res.status(500).send("DB error");
   }
 });
-app.post('/api/students', (req, res) => {
+app.post('/api/students', async (req, res) => {
   const datosRecibidos = req.body.name;
   try {
     console.log(`Datos recibidos = ${datosRecibidos}`);
-    db.query(`INSERT INTO students (name) VALUES ('${datosRecibidos}')`);
+    const result = await db.query(`INSERT INTO students `
+                                    +`(name) VALUES ('${datosRecibidos}')`
+                                                      + ` RETURNING id, name`);    
+    res.json({
+      id: result.rows[0].id,
+      name: result.rows[0].name
+    });
   } catch (err) {
-    console.err(err);
+    console.error(err);
     res.status(500).send("DB error");
   }
 })

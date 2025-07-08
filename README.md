@@ -7,6 +7,10 @@ Proyecto final de "Arquitectura y Sistemas Operativos"
 * Baldres, Alejandro Lucas
 * Torresi, Matias
 
+## ⚠ IMPORTANTE
+```
+Las respuestas del cuestionario, se encuentran dentro del archivo docs/1.CuestionarioTeorico.md
+```
 
 ## Servicios
 
